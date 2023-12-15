@@ -1,0 +1,6 @@
+Get all list permutations with repeats
+
+def list_perms(array: list, l=None) -> list[list]:
+    """List all the different orders of length l could be arranged if items on the list can be repeated. """
+
+    return None

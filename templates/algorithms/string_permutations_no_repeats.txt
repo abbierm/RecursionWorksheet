@@ -1,0 +1,6 @@
+String Permutations No Repeats
+
+def get_string_permutations(chars: str) -> list[str]:
+    """Returns a list of all of the different orderings the characters in the string could be arranged. """
+
+    return None

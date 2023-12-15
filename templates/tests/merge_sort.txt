@@ -1,0 +1,7 @@
+def test_merge_sort_even():
+    test_list = [20, 64, 10, 3, 93, 89, 19, 53]
+    assert worksheet.merge_sort(test_list) == [3, 10, 19, 20, 53, 64, 89, 93]
+
+def test_merge_sort_odd():
+    test_list = [64, 34, 67, 98, 40, 73, 78, 18, 87, 57, 91, 62, 95]
+    assert worksheet.merge_sort(test_list) == [18, 34, 40, 57, 62, 64, 67, 73, 78, 87, 91, 95, 98]

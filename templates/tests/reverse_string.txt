@@ -1,0 +1,8 @@
+def test_reverse_string_simple():
+    assert worksheet.reverse_string('puppies') == 'seippup'
+
+def test_reverse_string_complex():
+    """ Tests that reverse_string() can handle upper and lowercase along with spaces and punctuation. """
+    
+    test_string = 'We are always in a hurry to be happy...; for when we have suffered a long time, we have great difficulty in believing in good fortune.'
+    assert worksheet.reverse_string(test_string) == '.enutrof doog ni gniveileb ni ytluciffid taerg evah ew ,emit gnol a dereffus evah ew nehw rof ;...yppah eb ot yrruh a ni syawla era eW'

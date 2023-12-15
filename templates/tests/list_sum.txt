@@ -1,0 +1,2 @@
+def test_list_sum():
+    assert worksheet.list_sum([77, 143, 113, 92, 106, 30, 2, 154, 6, 17, 43]) == 783

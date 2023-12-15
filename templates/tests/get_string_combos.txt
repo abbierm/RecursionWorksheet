@@ -1,0 +1,8 @@
+def test_get_string_combos_length():
+    assert len(worksheet.get_string_combos('ABCDE', 2)) == 10
+
+def test_get_string_combos():
+    results = worksheet.get_string_combos('AB123', 3)
+    solution = ['AB1', 'AB2', 'AB3', 'A12', 'A13', 'A23', 'B12', 'B13', 'B23', '123']
+    compare_list = [x for x in results if x not in solution]
+    assert len(compare_list) == 0

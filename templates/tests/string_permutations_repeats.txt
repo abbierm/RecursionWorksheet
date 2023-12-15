@@ -1,0 +1,3 @@
+def test_string_permutations():
+    test_answer = ['111', '11A', '11B', '11C', '1A1', '1AA', '1AB', '1AC', '1B1', '1BA', '1BB', '1BC', '1C1', '1CA', '1CB', '1CC', 'A11', 'A1A', 'A1B', 'A1C', 'AA1', 'AAA', 'AAB', 'AAC', 'AB1', 'ABA', 'ABB', 'ABC', 'AC1', 'ACA', 'ACB', 'ACC', 'B11', 'B1A', 'B1B', 'B1C', 'BA1', 'BAA', 'BAB', 'BAC', 'BB1', 'BBA', 'BBB', 'BBC', 'BC1', 'BCA', 'BCB', 'BCC', 'C11', 'C1A', 'C1B', 'C1C', 'CA1', 'CAA', 'CAB', 'CAC', 'CB1', 'CBA', 'CBB', 'CBC', 'CC1', 'CCA', 'CCB', 'CCC']
+    assert sorted(worksheet.string_permutations('ABC1', length=3)) == test_answer

@@ -1,0 +1,20 @@
+def test_list_perms():
+    """Tests basic usage when ['a', 'b', 'c'] is the array and a length of 2 is given as an argument."""
+
+    test_answer = [['a', 'a'], ['a', 'b'], ['a', 'c'], ['b', 'a'], ['b', 'b'], ['b', 'c'], ['c', 'a'], ['c', 'b'], ['c', 'c']]
+    
+    test_collection = Counter(tuple(inner_list) for inner_list in test_answer)
+    worksheet_answer = worksheet.list_perms(['a', 'b', 'c'], l=2)
+    worksheet_collection = Counter(tuple(inner_list) for inner_list in worksheet_answer)
+    assert test_collection == worksheet_collection
+
+
+def test_list_perms_no_length():
+    """ Tests permutations with repetitions of a list when no length is given as an argument, just the list ['a', 'b', 'c']. """
+
+    test_answer = [['a', 'a', 'a'], ['a', 'a', 'b'], ['a', 'a', 'c'], ['a', 'b', 'a'], ['a', 'b', 'b'], ['a', 'b', 'c'], ['a', 'c', 'a'], ['a', 'c', 'b'], ['a', 'c', 'c'], ['b', 'a', 'a'], ['b', 'a', 'b'], ['b', 'a', 'c'], ['b', 'b', 'a'], ['b', 'b', 'b'], ['b', 'b', 'c'], ['b', 'c', 'a'], ['b', 'c', 'b'], ['b', 'c', 'c'], ['c', 'a', 'a'], ['c', 'a', 'b'], ['c', 'a', 'c'], ['c', 'b', 'a'], ['c', 'b', 'b'], ['c', 'b', 'c'], ['c', 'c', 'a'], ['c', 'c', 'b'], ['c', 'c', 'c']]
+
+    test_collection = Counter(tuple(inner_list) for inner_list in test_answer)
+    worksheet_answer = worksheet.list_perms(['a', 'b', 'c'])
+    worksheet_collection = Counter(tuple(inner_list) for inner_list in worksheet_answer)
+    assert test_collection == worksheet_collection

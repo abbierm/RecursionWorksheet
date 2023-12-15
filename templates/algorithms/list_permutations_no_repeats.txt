@@ -1,0 +1,6 @@
+Get all list permutations from items on a list without repeats
+
+def get_list_permutations(array: list) -> list[list]:
+    """List all the different orders the items in the list could be arranged without items being repeated. """
+
+    return None

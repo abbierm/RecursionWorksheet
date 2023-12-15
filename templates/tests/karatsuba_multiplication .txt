@@ -1,0 +1,7 @@
+
+def test_multiply_same():
+    """ Simple test for two 3 number problems. """
+    assert worksheet.multiply(123, 454) == 55842
+
+def test_multiply_diff_lengths():
+    assert worksheet.multiply(10293, 847) == 8718171

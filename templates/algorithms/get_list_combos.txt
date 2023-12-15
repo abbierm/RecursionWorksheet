@@ -1,0 +1,7 @@
+Get all k combinations of items in a list
+
+def get_list_combos(array: list, k: int) -> list[list]:
+    """Accepts a list and returns a list of lists of the k number of combos"""
+
+    return None
+
