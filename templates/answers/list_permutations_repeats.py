@@ -19,4 +19,3 @@ def list_perms(array: list, length=None, current=None):
         results.extend(list_perms(array, length - 1, new))
 
     return results
-

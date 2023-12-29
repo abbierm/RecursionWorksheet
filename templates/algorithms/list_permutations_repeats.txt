@@ -1,6 +1,12 @@
 Get all list permutations with repeats
 
-def list_perms(array: list, l=None) -> list[list]:
-    """List all the different orders of length l could be arranged if items on the list can be repeated. """
+def list_perms(array: list, length=None) -> list[list]:
+    """
+    This function should generate a list of all the possible permutations of the items inside of the list labeled "array" with the specified length.  If no length is given then it should be assumed that the length is the same as the array. Items can be repeated and not all items inside of the list need to be used in each permutation. 
+    
+    For example list_perms([1, 2, 3], 3) should return:
+    [[1, 1, 1], [1, 1, 2], [1, 1, 3], [1, 2, 1], [1, 2, 2], [1, 2, 3], [1, 3, 1], [1, 3, 2], [1, 3, 3], [2, 1, 1], [2, 1, 2], [2, 1, 3], [2, 2, 1], [2, 2, 2], [2, 2, 3], [2, 3, 1], [2, 3, 2], [2, 3, 3], [3, 1, 1], [3, 1, 2], [3, 1, 3], [3, 2, 1], [3, 2, 2], [3, 2, 3], [3, 3, 1], [3, 3, 2], [3, 3, 3]]
+    
+    """
 
     return None
