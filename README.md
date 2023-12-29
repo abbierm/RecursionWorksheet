@@ -72,9 +72,9 @@ The terminal will print the pytest results
 
 #### There are two optional command line arguments.  If you don't include these the program will assume the default values. 
 
-        1. -n Specify the number of worksheets to create.  The default is set at 5. "make" is the only command that uses the -n command.
+1. -n - Specify the number of worksheets to create.  The default is set at 5. "make" is the only command that uses the -n command.
 
-        2. -d specify the date (or what you want to name the folder). The default is set at today's date. 
+2. -d - Specify the date (or what you want to name the folder). The default is set at the current date.
 
   
 
