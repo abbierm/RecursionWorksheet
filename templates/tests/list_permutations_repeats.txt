@@ -4,7 +4,7 @@ def test_list_perms():
     test_answer = [['a', 'a'], ['a', 'b'], ['a', 'c'], ['b', 'a'], ['b', 'b'], ['b', 'c'], ['c', 'a'], ['c', 'b'], ['c', 'c']]
     
     test_collection = Counter(tuple(inner_list) for inner_list in test_answer)
-    worksheet_answer = worksheet.list_perms(['a', 'b', 'c'], l=2)
+    worksheet_answer = worksheet.list_perms(['a', 'b', 'c'], length=2)
     worksheet_collection = Counter(tuple(inner_list) for inner_list in worksheet_answer)
     assert test_collection == worksheet_collection
 
