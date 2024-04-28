@@ -1,6 +1,6 @@
 # Recursive Worksheet Creator - Creates a python file with random recursive 
 # algorithms to practice along with tests via pytest
-# Algorithms are from the book "The Recursive Book of Recursion" by Al Sweigart
+
 
 import os
 import random

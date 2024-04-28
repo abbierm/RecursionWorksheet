@@ -1,0 +1,14 @@
+Detect Palindromes
+
+def detect_string_palindrome(chars: str) -> str:
+    """
+    Accepts a string and returns True if string is a palindrome
+    Valid palindromes are spelt the same forwards and backwards, for example:
+        - "racecar" reversed racecar so racecar should return:
+            "racecar is a valid palindrome"
+        - "corgis" is "sigroc" reversed so "corgis" should return:
+            "corgis is not a valid palindrome"
+    Case, punctuation, and whitespaces should be ignored
+    """
+
+    return None
