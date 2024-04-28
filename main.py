@@ -1,5 +1,5 @@
 # Recursive Worksheet Creator - Creates a python file with random recursive 
-# algorithms to practice along with tests via pytest.
+# algorithms to practice along with tests via pytest
 
 
 import os

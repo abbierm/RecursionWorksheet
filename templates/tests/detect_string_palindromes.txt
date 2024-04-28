@@ -1,0 +1,16 @@
+def test_string_palindromes_long():
+    assert worksheet.detect_string_palindrome("oozy rat in a sanitary zoo") == "oozy rat in a sanitary zoo is a valid palindrome"
+
+    assert worksheet.detect_string_palindrome("sometimes I sit and think but sometimes I just sit") == "sometimes I sit and think but sometimes I just sit is not a valid palindrome"
+
+
+def test_string_palindromes_case():
+    assert worksheet.detect_string_palindrome("TacOCat") == "TacOCat is a valid palindrome"
+
+    assert worksheet.detect_string_palindrome("A veces me siento Y pieNso Pero a vEces simplemente ME sIeNto") == "A veces me siento Y pieNso Pero a vEces simplemente ME sIeNto is not a valid palindrome"
+
+
+def test_string_palindromes_punctuation():
+    assert worksheet.detect_string_palindrome("Was it a car; or a cat I saw?") == "Was it a car; or a cat I saw? is a valid palindrome"
+
+    assert worksheet.detect_string_palindrome("¡Claro que sí!") == "¡Claro que sí! is not a valid palindrome"
