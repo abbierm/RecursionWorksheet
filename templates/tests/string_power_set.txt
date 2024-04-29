@@ -1,0 +1,20 @@
+def make_set(x):
+    return set(x)
+
+
+def test_string_power_set():
+    x = worksheet.find_string_power_set("1234")
+    assert len(x) == 16
+    assert "" in x, 'power set should have at least one empty string ""'
+    assert x.count("") == 1
+    x.remove("")
+
+    answer = ["1234", "123", "124", "134", "234", "12", "13", "14", "23", "24", "34", "1", "2", "3", "4"]
+
+    test_set = list(map(lambda x: make_set(x), x))
+    set_answer = list(map(lambda x: make_set(x), answer))
+    
+    for item in set_answer:
+        assert item in test_set
+        test_set.remove(item)
+    assert len(test_set) == 0
