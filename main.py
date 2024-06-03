@@ -112,7 +112,7 @@ def remove_worksheet(date, number) -> None:
     return
 
 
-def clean(*args) -> None:
+def clean() -> None:
     """ Removes all files from the worksheet folder. """
 
     worksheet_folders = os.listdir(WORKSHEETS_PATH)
@@ -193,7 +193,6 @@ def main() -> None:
                             'remove': remove_worksheet 
                             }
     args = _parse_args()
-    # print(args)
     command = function_dictionary[args.command]
     command(args.date, args.number)
 

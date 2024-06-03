@@ -1,0 +1,19 @@
+def test_flatten_string():
+    answer = sorted(['a', 'answer', 'is', 'test', 'this'])
+    assert sorted(worksheet.flatten(['this', 'is', 'a'], 'test', 'answer')) == answer
+
+
+def test_flatten_assorted():
+    answer = ['hiro', None, True, 1, 2, 3, True, None, False, 23, 87]
+    
+    results = worksheet.flatten('hiro', None, True, [1, 2, 3, [True, None, False, [23, 87]]])
+    
+    assert len(results) == 11
+
+    compare_list = [x for x in results if x not in answer]
+    assert len(compare_list) == 0
+
+
+def test_flatten_numbers():
+    results = worksheet.flatten(1.51, -87, [-333, .5, 82], 500000)
+    assert sorted(results) == [-333, -87, 0.5, 1.51, 82, 500000]
