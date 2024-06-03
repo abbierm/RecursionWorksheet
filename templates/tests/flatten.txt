@@ -5,15 +5,19 @@ def test_flatten_string():
 
 def test_flatten_assorted():
     answer = ['hiro', None, True, 1, 2, 3, True, None, False, 23, 87]
-    
     results = worksheet.flatten('hiro', None, True, [1, 2, 3, [True, None, False, [23, 87]]])
-    
     assert len(results) == 11
-
     compare_list = [x for x in results if x not in answer]
     assert len(compare_list) == 0
-
 
 def test_flatten_numbers():
     results = worksheet.flatten(1.51, -87, [-333, .5, 82], 500000)
     assert sorted(results) == [-333, -87, 0.5, 1.51, 82, 500000]
+
+def test_flatten_multi_nested():
+    results = worksheet.flatten([1,2],[3,4,5],[6,[7],[[8]]])
+    assert sorted(results) == [1,2,3,4,5,6,7,8]
+
+def test_different_iters():
+    results = worksheet.flatten((1, 2, 3, [4, 5, [(10, 31, {18, (20, 24)})]]))
+    assert sorted(results) == sorted([1, 2, 3, 4, 5, 10, 31, 18, 20, 24])

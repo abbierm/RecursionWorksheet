@@ -1,4 +1,4 @@
-
+from collections.abc import Iterable
 
 def flatten(*args):
     """
@@ -11,12 +11,9 @@ def flatten(*args):
     # base case - can't be broken down anymore
     results = []
     for arg in args:
-        try:
-            if len(arg) == 1 or isinstance(arg, str):
-                results.append(arg)
-            else:
-                for x in arg:
-                    results.extend(flatten(x))
-        except TypeError:
+        if isinstance(arg, Iterable) and isinstance(arg, str) == False:
+            for i in arg:
+                results.extend(flatten(i))
+        else:
             results.append(arg)
     return results
