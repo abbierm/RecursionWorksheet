@@ -1,0 +1,30 @@
+def test_flood_fill_square():
+    test_image = [
+        list('..............'),
+        list('..##########..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..#........#..'),
+        list('..##########..'),
+        list('..............'),
+    ]
+    worksheet.flood_fill(test_image, 3, 6, 'o')
+    assert test_image == [
+        list('..............'),
+        list('..##########..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..#oooooooo#..'),
+        list('..##########..'),
+        list('..............'),
+    ]
