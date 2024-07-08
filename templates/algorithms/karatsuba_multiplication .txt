@@ -1,6 +1,4 @@
 Karatsuba Multiplication
 
 def multiply(x: int, y: int) -> int:
-    """Multiply x and y by using a lookup table rather than using the * symbol """
-
     return None

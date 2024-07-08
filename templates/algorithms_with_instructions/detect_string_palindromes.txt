@@ -1,0 +1,23 @@
+Detect Palindromes
+
+"""
+Instructions:
+    is_string_palindrome should return True if the string argument char is a
+    palindrome and False if the char is not a palindrome. 
+     
+    White space, letter case, and punctuation should be ignored.
+
+    A palindrome is a a word or phrase where the word is spelt the same forwards
+    and backwards. Some examples of palindromes are that should return True if 
+    used as the argument for is_string_palindrome() are:
+    
+        - "tacocat"
+        - "racecar"
+        - "Amy? Must I jujitsu my ma?"
+        - "Oozy rat in a sanitary zoo."
+    
+"""
+
+def is_string_palindrome(chars: str) -> bool:
+
+    return None

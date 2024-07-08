@@ -1,0 +1,20 @@
+Binary Search
+
+"""
+Instructions: 
+    Accepts an "item" integer value and an "array" list of sorted integers and
+    returns the index of where the item is inside of the array.  If the item is
+    not in the array then binary_search should return None. 
+
+    For example:
+        binary_search(6, [0, 2, 4, 6, 8]) = 3
+        binary_search(5, [0, 2, 4, 6, 8]) = None
+
+    You can add your own arguments to binary_search but the function will only
+    be tested with the arguments item and array.  Therefore you need to
+    programatically make sure your  extra arguments don't break the tests. 
+"""
+
+def binary_search(item: int, array: list) -> int:
+
+    return 491

@@ -1,0 +1,55 @@
+Flood Fill
+
+def flood_fill(
+    image: list,
+    x: int,
+    y: int,
+    new_char: str,
+    old_char: str = None
+):
+    """
+    Use a recursive algorithm to fill in an image in the form of a nested list
+    where each inner list is a new row. 
+
+    All images will be rectangular (height and width will be the same
+    throughout.)
+
+    for example an image that would be printed to the screen like:
+
+        ....####################....
+        ....#..................#....
+        ....#..................#....
+        ....#..................#....
+        ....#..................#....
+        ....#..................#....
+        ....####################....
+
+    would be in this format:
+
+    image = [
+                list('....####################....'),
+                list('....#..................#....'),
+                list('....#..................#....'),
+                list('....#..................#....'),
+                list('....#..................#....'),
+                list('....#..................#....'),
+                list('....####################....'), 
+            ]
+
+
+    The result of the flood fill should be returned as a nested list where any
+    '.' enclosed inside of the '#' should be 'o'
+
+    image = [
+                list('....####################....'),
+                list('....#oooooooooooooooooo#....'),
+                list('....#oooooooooooooooooo#....'),
+                list('....#oooooooooooooooooo#....'),
+                list('....#oooooooooooooooooo#....'),
+                list('....#oooooooooooooooooo#....'),
+                list('....####################....'), 
+            ]
+
+    """
+
+    return []

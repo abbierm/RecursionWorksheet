@@ -1,6 +1,4 @@
 List Sum
 
 def list_sum(array: list[int]) -> int:
-    """Finds the sum of all items on a list recursively. """
-
-    return None
+    return 0

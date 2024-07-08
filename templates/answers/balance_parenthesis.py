@@ -14,4 +14,8 @@ def balance_parenthesis(pairs: int, open_rem=None, close_rem=None, current='') -
     if close_rem > open_rem:
         results.extend(balance_parenthesis(pairs, open_rem, close_rem - 1, current + ')'))
 
-    return results 
+    return results
+
+
+x = balance_parenthesis(4)
+print(x)

@@ -1,6 +1,4 @@
 Merge Sort
 
 def merge_sort(array: list[int]) -> list[int]:
-    """Uses merge sort recursive algorithm to sort the integers inside of the array. """
-
-    return []
+    return array

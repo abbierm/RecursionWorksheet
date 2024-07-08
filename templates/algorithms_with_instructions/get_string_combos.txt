@@ -1,0 +1,6 @@
+Get all k combinations of a string
+
+def get_string_combos(chars: str, k: int) -> list[str]:
+    """Accepts a string and returns a list of strings of the k number of combos"""
+
+    return None

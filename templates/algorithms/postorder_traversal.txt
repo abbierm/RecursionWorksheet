@@ -1,10 +1,4 @@
 Postorder Tree Traversal
 
 def postorder_traversal(node: dict) -> list:
-    """
-    Given the root node, use postorder traversal to return a list of all the names insdie of a dictionary binary tree.  The binary tree is going to be in the following format:
-    
-    root = {'name': 'A', 'children': [{'name': 'B', 'children': []}, {'name': 'C', 'children': [{}]}]}
-    """
-    
-    return None
+    return []

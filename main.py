@@ -46,7 +46,7 @@ def _write_tests(test_path, tests):
             fout.write('\n\n\n')
 
 
-def _write_worksheet(worksheet_path, algorithms):
+def _write_worksheet(worksheet_path, algorithms, no_instructions):
     # Write Heading of worksheet and clear worksheet if it already exists. 
     with open(worksheet_path, 'w') as fout:
         fout.write(f'# Recursion Worksheet: {datetime.now().strftime("%m-%d")}\n\n')
@@ -55,7 +55,13 @@ def _write_worksheet(worksheet_path, algorithms):
         current_algorithm = algorithms.pop()
 
         # Read and store algo from template
-        template_path = Path((os.path.dirname(__file__)), "templates", "algorithms", current_algorithm)
+        if no_instructions == False:
+            template_path = Path((os.path.dirname(__file__)), 
+                        "templates", 
+                        "algorithms_with_instructions", 
+                        current_algorithm)
+        else:
+            template_path = Path((os.path.dirname(__file__)), "templates", "algorithms", current_algorithm)
 
         with open(template_path, 'r') as w:
             lines = w.readlines()
@@ -67,13 +73,14 @@ def _write_worksheet(worksheet_path, algorithms):
                     white_space = ((80 - len(lines[i])) // 2) - 3
                     title = '#' + white_space * '=' + ' ' + lines[i].rstrip('\n') + ' ' + white_space * '='
                     fout.write(title)
+
                 else:
                     fout.write(lines[i])
             fout.write('\n\n\n')
     return None
 
 
-def make_new_worksheet(date, number):
+def make_new_worksheet(date, number, no_instructions):
     # Creates a path to a directory with today's date 
     if date is None:
         date = datetime.now().strftime('%m-%d')
@@ -90,13 +97,13 @@ def make_new_worksheet(date, number):
     test_path = Path(path, "test_worksheet.py")
 
     # Write the worksheet and pytest file in same directory
-    _write_worksheet(worksheet_path, algos_set)
+    _write_worksheet(worksheet_path, algos_set, no_instructions)
     _write_tests(test_path, test_algos)
 
     return 
 
 
-def remove_worksheet(date, number) -> None:
+def remove_worksheet(date, number, no_instructions) -> None:
     folder_to_remove = Path(WORKSHEETS_PATH, date)
 
     if os.path.isdir(folder_to_remove):
@@ -134,7 +141,7 @@ def clean() -> None:
     return None
 
 
-def run_tests(date, number):
+def run_tests(date, number, no_instructions):
     """Runs pytest on the file for the specific date"""
 
     test_path = Path(WORKSHEETS_PATH, date)
@@ -167,21 +174,38 @@ def _parse_args() -> dict:
     parser = argparse.ArgumentParser(description='Creates recursion worksheets in python')
 
     command_help = "'make' creates new worksheet, 'remove' removes all the \
-        files inside of the selected dates folder, 'clean' deletes all the worksheets inside of the worksheet folder, 'test' runs the pytest test to check the worksheet."
+        files inside of the selected dates folder, 'clean' deletes all the \
+        worksheets inside of the worksheet folder, 'test' runs the pytest test \
+        to check the worksheet."
 
     parser.add_argument('command', choices=['make', 'remove', 'clean', 'test'], default='make', help=command_help)
 
-    date_help = "Date argument for file removal or testing.  Takes the date in 'mm-dd' year argument. "
+    date_help = "Date argument for file removal or testing. Takes the date in 'mm-dd' year argument. "
     parser.add_argument('-date', '-d', help=date_help, default=datetime.now().strftime("%m-%d"))
 
     number_help = "Specifies number of algorithms you want to make on the worksheet.  Defaults to 5 algorithms if not specified.  "
     parser.add_argument('-number', '-n', type=int, default=5, help=number_help)
 
+    no_instructions_help = "If you don't want the commented/doc-string \
+        instructions on your worksheet,  use the --no-i modifier to create the \
+        worksheets with just the functions. \nGenerally this option is for \
+        people who already know what the function is asking for and don't want \
+            to add the visual clutter that the instructions add."
+    parser.add_argument(
+            '--no-i',
+            '-no-i',
+            '--no-instructions', 
+            '-no-instructions',
+            dest="no_instructions", 
+            action="store_true", 
+            help=no_instructions_help
+        )
+
     args = parser.parse_args()
     # reformats dates incase user puts '/' or '\' which would return an error
     if '/' in args.date or '\\' in args.date:
         args.date = args.date.replace('/', '-').replace('\\', '-')
-
+    
     return args
 
 
@@ -193,8 +217,9 @@ def main() -> None:
                             'remove': remove_worksheet 
                             }
     args = _parse_args()
+    
     command = function_dictionary[args.command]
-    command(args.date, args.number)
+    command(args.date, args.number, args.no_instructions)
 
 
 if __name__ == "__main__":

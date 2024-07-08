@@ -1,0 +1,8 @@
+Quick Sort
+
+def quick_sort(array: list[int]):
+    """
+    Use the quick sort algorithm to sort the intgers inside of the array. 
+    """
+
+    return

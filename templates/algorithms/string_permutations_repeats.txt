@@ -1,6 +1,4 @@
 String Permutations With Repeats
 
-def string_permutations(chars: str, length=None) -> str:
-    """Returns a list of all of the possible orderings of the specified integer length could be arranged.  Characters can be repeated. """
-
-    return None
+def string_permutations(chars: str, length=None) -> list[str]:
+    return []

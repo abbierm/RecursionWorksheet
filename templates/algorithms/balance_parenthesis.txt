@@ -1,6 +1,5 @@
 Balanced Parenthesis
 
 def balance_parenthesis(pairs: int) -> list[str]:
-    """Accepts integer number of pairs and returns a list of all possible sequence of balanced parenthesis. """
-
-    return None
+    
+    return []

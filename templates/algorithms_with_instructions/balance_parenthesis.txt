@@ -1,0 +1,34 @@
+Balanced Parenthesis
+
+"""
+Instructions:
+    Accepts an integer for the number of pairs of parenthesis to return in a
+     list. Each possible combination should be a separate string in the 
+     returned list.  
+
+    For example:
+        balance_parenthesis(3) = 
+            ['((()))', '(()())', '(())()', '()(())', '()()()']
+
+        balance_parenthesis(4) = [
+            '(((())))', '((()()))', '((())())', '((()))()', '(()(()))',
+            '(()()())', '(()())()', '(())(())', '(())()()', '()((()))', 
+            '()(()())', '()(())()', '()()(())', '()()()()'
+        ]
+    
+
+    A string has balanced parenthesis if all open parenthesis "(" in the string
+    also contain it's opposite closed parenthesis ")" somewhere else in the
+    string.  
+    
+    Basically, if someone wants to find all the string combinations of 3 pairs
+    of balanced parenthesis, each string should contain 6 total characters,
+    3 being open parenthesis "(" and 3 closed ")". 
+
+    The order of results does not matter, just that all correct combinations
+    are insideof the resulting list. 
+
+"""
+def balance_parenthesis(pairs: int) -> list[str]:
+    
+    return []

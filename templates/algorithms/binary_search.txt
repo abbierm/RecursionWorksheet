@@ -1,6 +1,4 @@
 Binary Search
 
 def binary_search(item: int, array: list) -> int:
-    """ Returns index of item in array using binary search algorithm.  Array will be in order.  If item isn't in array, function should return None. """
-
-    return []
+    return 491

@@ -1,6 +1,4 @@
 Reverse String
 
 def reverse_string(chars: str) -> str:
-    """ Returns the characters in a string in reversed order """
-
-    return None
+    return chars
