@@ -1,11 +1,25 @@
 Max Depth of a Binary Tree
 
-def max_depth(node: dict) -> int:
-    """ 
-    Finds the max depth of a binary tree in python dictionary form. 
-    dictionary has two keys per node, the 'name' and 'children'. 
-    root = {'name': 'A', 'children': [{'name': 'B', 'children': []}, {'name': 'C', 'children': [{}]}]}
-    The name is a string and children is a list of up to two children. 
-    """
+"""
+Instructions:
+    The function should find the max depth of a binary tree represented as a
+    python dictionary. Each "node" will have two keys, name and children.
+    The "name" value will store the node's unique one letter name and the 
+    "children" value will be represents as a list of up to two addtional nodes.
 
+    Example binary tree:
+        
+    root_node = {"name": "A", "children": [
+                                            {
+                                                "name": "B", "children": []
+                                            },
+                                            {
+                                                "name": "C", "children": []
+                                            }
+                                        ]
+                }
+
+"""
+
+def max_depth(node: dict) -> int:
     return None

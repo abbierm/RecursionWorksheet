@@ -1,6 +1,16 @@
 Merge Sort
 
+"""
+Instructions:
+    Use the merge sort algorithms to recursively sort an array of integers.
+    The return value for merge_sort should be a list containing the same values
+    in the original array except in order from smallest to largest value. 
+
+    example:
+        merge_sort([1, 10, 5, 25, 18]) should return: [1, 5, 10, 18, 25]
+
+"""
+
 def merge_sort(array: list[int]) -> list[int]:
-    """Uses merge sort recursive algorithm to sort the integers inside of the array. """
 
     return []

@@ -1,10 +1,19 @@
 Pre-Order Traverse a Binary Tree
 
+"""
+Instructions: 
+    Given the root node, use a preorder traversal strategy to return a list
+    of all the names inside a python dictionary binary tree. The binary tree 
+    will be in the following format:
+        root = {'name': "A", 'children': [{'name': 'B', 'children': []
+        }, {'name': 'C', 'children': []}]}
+
+    If root was passed to preorder_traversal, the expected result would be:
+        ['A', 'B', 'C']
+
+"""
+
 def preorder_traversal(node: dict) -> list:
-    """
-    Given the root node, use preorder traversal to return a list of all the names insdie of a dictionary binary tree.  The binary tree is going to be in the following format:
-    
-    root = {'name': 'A', 'children': [{'name': 'B', 'children': []}, {'name': 'C', 'children': [{}]}]}
-    """
+
     
     return None
