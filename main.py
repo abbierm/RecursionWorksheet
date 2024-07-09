@@ -151,7 +151,7 @@ def run_tests(date, number, no_instructions):
         pycache_file = Path(test_path, '__pycache__')
         if os.path.isdir(pycache_file):
             shutil.rmtree(pycache_file)
-        pytest.main([test_path])
+        pytest.main([test_path, "-v"])
     else:
         print('There is no worksheet file for the selected date.')
         print('If you are trying to run pytest on a worksheet that isn\'t today\'s date, run the command: ')
