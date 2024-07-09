@@ -1,6 +1,30 @@
 Get all k combinations of a string
 
+"""
+Instructions:
+    get_string_combos() accepts the arguments:
+        - chars: A single string  
+        - k: an integer number of items that should be in each combination
+
+    A combination is an unordered collection with non-repeating values of a
+    larger collections. Generally when finding the combinations, you are 
+    given a k-value telling you how many items will be inside of each 
+    combination. 
+
+    Combinations are like a sub-selection of a bigger collection. For example,
+    if we wanted to find the different combinations of 4 items inside of the 5
+    item string "12345", we would get:
+
+        ["1234", "1235", "1345", "2345"]
+
+    
+    The results of this problem should be a list of strings of all of the
+    different combinations for the original string (chars).  Each individual
+    string should be k-number in length. Assume that the original string (chars)
+    has no duplicate values. 
+
+"""
+
 def get_string_combos(chars: str, k: int) -> list[str]:
-    """Accepts a string and returns a list of strings of the k number of combos"""
 
     return None

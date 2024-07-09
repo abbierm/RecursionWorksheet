@@ -1,7 +1,28 @@
 Get all k combinations of items in a list
 
+"""
+Instructions:
+    get_list_combos() accepts the arguments:
+        - array: A list of primitive data types (strings, floats, ints) 
+        - k: an integer number of items that should be in each combination
+
+    A combination is an unordered collection with non-repeating values of a
+    larger collections. Generally when finding the combinations, you are 
+    given a k-value telling you how many items will be inside of each 
+    combination. 
+
+    Combinations are like a sub-selection of a bigger collection. For example,
+    if we wanted to find the different combinations of 4 items inside of the 5
+    item list [1, 2, 3, 4, 5], we would get:
+
+        [[1, 2, 3, 4], [1, 2, 3, 5], [1, 3, 4, 5], [2, 3, 4, 5]]
+
+    
+    The results of this problem should be a list of nested lists of all of the
+    different combinations for the original array containing k-number of values.
+
+"""
+
 def get_list_combos(array: list, k: int) -> list[list]:
-    """Accepts a list and returns a list of lists of the k number of combos"""
-
+   
     return None
-

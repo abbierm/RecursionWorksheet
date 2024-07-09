@@ -1,7 +1,7 @@
 Tower of Hanoi
 
-def solve_hanoi(disks):
-    """
+"""
+Instructions:
     Given the number of disks, return a list that shows the smallest number of moves needed to get all the disks from the first tower the the last tower.
 
     Example - 2 layered Tower of Hanoi
@@ -14,5 +14,8 @@ def solve_hanoi(disks):
 
     Expected Output : [[2, 1], [], []], [[2], [1], []] , [[], [1], [2]],
                     [[], [], [2, 1]]
-    """
+"""
+
+def solve_hanoi(disks):
+
     return []

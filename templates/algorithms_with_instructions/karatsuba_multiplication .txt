@@ -1,6 +1,19 @@
 Karatsuba Multiplication
 
+"""
+Instructions:
+    Multiply integers x and y using a lookup table rather than using the *
+    multiplication symbol. 
+
+    You obviously can cheat, the tests for this problem are only checking that
+    the right answer is given.  That being said, this is a pretty interesting
+    use case for recursion (and algebra).  You can learn more about Karatsuba
+    multiplication by following the link
+    https://inventwithpython.com/recursion/chapter5.html 
+    and scrolling down to the subsection aptly named "Karatsuba Multiplication"
+
+"""
+
 def multiply(x: int, y: int) -> int:
-    """Multiply x and y by using a lookup table rather than using the * symbol """
 
     return None

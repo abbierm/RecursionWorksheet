@@ -1,14 +1,13 @@
 # Recursive Worksheet Creator - Creates a python file with random recursive 
-# algorithms to practice along with tests via pytest
+# Algorithms to practice along with tests via pytest
 
-
-import os
-import random
-from pathlib import Path
-from datetime import datetime
-import shutil
 import argparse
+from datetime import datetime
+import os
+from pathlib import Path
 import pytest
+import random
+import shutil
 
 
 TEMPLATES_PATH = Path((os.path.dirname(__file__)), "templates", "algorithms")
