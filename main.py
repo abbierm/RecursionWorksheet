@@ -118,7 +118,7 @@ def remove_worksheet(date, number, no_instructions) -> None:
     return
 
 
-def clean() -> None:
+def clean(*args) -> None:
     """ Removes all files from the worksheet folder. """
 
     worksheet_folders = os.listdir(WORKSHEETS_PATH)
