@@ -1,5 +1,24 @@
 String Permutations With Repeats
 
+"""
+Instructions:
+    This function should generate a list of all the possible permutations of
+    characters inside of the chars string with the specified length.  If
+    no length is given then it should be assumed that the length is the same as
+    the array. Items can be repeated and not all items inside of the list need
+    to be used in each permutation. 
+    
+    For example string_permutations("123", 3) should return:
+        
+        ['111', '112', '113', '121', '122', '123', '131', '132', '133', '211',
+        '212', '213', '221', '222', '223', '231', '232', '233', '311', '312',
+        '313', '321', '322', '323', '331', '332', '333']
+        
+    You can assume all of the items in array will be primitive types (ints,
+    floats, or strings) and that there will be no duplicates in the array. 
+
+"""
+
 def string_permutations(chars: str, length=None) -> str:
     """Returns a list of all of the possible orderings of the specified integer length could be arranged.  Characters can be repeated. """
 

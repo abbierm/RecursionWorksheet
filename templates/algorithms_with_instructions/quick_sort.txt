@@ -1,8 +1,34 @@
 Quick Sort
 
+"""
+Instructions
+    Use the quick sort sorting algorithm to re-arrange the integers from array
+    into an array of increasing order. 
+
+    The quick_sort algorithm should sort the list in place meaning it won't 
+    return a new list. Instead the original list should be altered inside of 
+    the function without creating a new list. 
+
+    Example:
+        >>>my_list = [5, 10, 2, 7, 22, 8, 4, 15]
+        >>>quick_sort(my_list)
+        >>>print(my_list)
+        [2, 4, 5, 7, 8, 10, 15, 22]
+
+    You can assume that all tests will be correctly formatted lists containing
+    integers. 
+    
+    You can optionally add your own arguments but you should make sure
+    the function won't end with an error if those arguments aren't passed in
+    the tests. 
+
+        quick_sort(array, left=None, right=None):
+            if left is None:
+                # assign left
+            ...
+
+"""
+
 def quick_sort(array: list[int]):
-    """
-    Use the quick sort algorithm to sort the intgers inside of the array. 
-    """
 
     return
