@@ -2,8 +2,8 @@ def make_set(x):
     return set(x)
 
 
-def test_string_power_set():
-    x = worksheet.find_string_power_set("1234")
+def test_string_powersets():
+    x = worksheet.find_string_powersets("1234")
     assert len(x) == 16
     assert "" in x, 'power set should have at least one empty string ""'
     assert x.count("") == 1

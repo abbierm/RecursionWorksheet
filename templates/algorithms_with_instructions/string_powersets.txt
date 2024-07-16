@@ -1,7 +1,7 @@
 String Power Set
 
-def find_string_power_set(chars: str) -> list[str]:
-    """
+"""
+Instructions:
     Find every possible subset of all the characters in the string and return them in a list.
 
     Sets are unordered collections of unique items.  
@@ -13,11 +13,13 @@ def find_string_power_set(chars: str) -> list[str]:
         {'a', 'd'} is not a subset of {'a', 'b', 'c'} because the second set does not have a 'd'
 
 
-    For example, if given the string "ABC", find_string_power_set("ABC") shoud return:
+    For example, if given the string "ABC", find_string_powersets("ABC") should return:
 
-        ["ABC", "AB", "AC", "A", "BC", "B", "C"]
+        ["ABC", "AB", "AC", "A", "BC", "B", "C", ""]
     
     If the string argument chars has duplicate characters, make sure the returned list does not contain "sets" with duplicates
-    """
+"""
+
+def find_string_powersets(chars: str) -> list[str]:
 
     return []

@@ -1,6 +1,21 @@
 String Permutations No Repeats
 
+"""
+Instructions:
+    get_string_permutations() should generate a list of all the possible
+    permutations of the characters inside of the argument "chars" with the 
+    specified length. 
+    
+    For example get_string_permutations("123") should return:
+        ['123', '213', '231', '132', '312', '321']
+
+    You can assume the the chars argument will be a valid string and that none
+    of the characters will be repeated. 
+
+    The order of the results does that matter as long as all of the possible
+    permutations are inside of the resulting list only once. 
+"""
+
 def get_string_permutations(chars: str) -> list[str]:
-    """Returns a list of all of the different orderings the characters in the string could be arranged. """
 
     return None

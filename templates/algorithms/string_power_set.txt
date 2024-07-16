@@ -1,4 +1,0 @@
-String Power Set
-
-def find_string_power_set(chars: str) -> list[str]:
-    return []

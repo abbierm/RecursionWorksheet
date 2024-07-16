@@ -1,0 +1,4 @@
+String Power Set
+
+def find_string_powersets(chars: str) -> list[str]:
+    return []

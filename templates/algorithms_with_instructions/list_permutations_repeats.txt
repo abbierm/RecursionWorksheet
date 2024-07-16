@@ -2,11 +2,11 @@ Get all list permutations with repeats
 
 """
 Instructions:
-    This function should generate a list of all the possible permutations of
-    the items inside of the argument "array" with the specified length.  If
-    no length is given then it should be assumed that the length is the same as
-    the array. Items can be repeated and not all items inside of the list need
-    to be used in each permutation. 
+    This function should generate a nested list of all the possible
+    permutations of the items inside of the argument "array" with the
+    specified length.  If no length is given then it should be assumed that the
+    length is the same as the array. Items can be repeated and not all items
+    inside of the list need to be used in each permutation. 
     
     For example list_perms([1, 2, 3], 3) should return:
         [

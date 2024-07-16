@@ -1,6 +1,16 @@
 Reverse String
 
-def reverse_string(chars: str) -> str:
-    """ Returns the characters in a string in reversed order """
+"""
+Instructions:
+    reverse_string() accepts a string (chars) and should return all the
+    characters in reverse order. 
 
+    Examples:
+        reverse_string("hello") = "olleh"
+        reverse_string("Recursion Worksheet") = "teehskroW noisruceR"
+
+"""
+
+def reverse_string(chars: str) -> str:
+    
     return None
