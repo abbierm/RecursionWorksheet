@@ -1,5 +1,5 @@
 Get all k combinations of items in a list
 
 def get_list_combos(array: list, k: int) -> list[list]:
-    return []
+    return None
 
