@@ -1,0 +1,68 @@
+def test_inorder_traversal():
+    root = {'data': 'A', 'children': [
+            {'data': 'B', 'children': [
+                {'data': 'D', 'children':[
+                    {'data': 'H', 'children':[]},
+                    {'data': 'I', 'children': [
+                        {'data': 'M', 'children': []}
+                    ]}
+                ]}, 
+                {'data': 'E', 'children': [
+                    {'data': 'J', 'children': []}
+                ]},
+            {'data': 'C', 'children': [
+                {'data': 'F', 'children': [
+                    {'data': 'K', 'children': []},
+                    {'data': 'L', 'children': []}
+                ]},
+                {'data': 'G','children': []}
+            ]}]}]}
+
+    assert worksheet.inorder_traversal(root) == ['H', 'D', 'M', 'I', 'B', 'J', 'E', 'A']
+
+
+def test_inorder_traversal2():
+    root2 = {'data': 'Alice', 'children':[
+    {'data': 'Bob', 'children': [
+        {'data': 'Dan', 'children': [
+            {'data': 'Gretchen', 'children': [
+                {'data': 'Han', 'children': [
+                    {'data': 'Ivan', 'children': []}]
+                }, 
+                {'data': 'Juliana', 'children': [
+                    {'data': 'Xavi', 'children': []}]
+                }]
+            }]
+        }, 
+        {'data': 'Eunice', 'children': [
+            {'data': 'Kennith', 'children': []}, 
+            {'data': 'Lauren', 'children': [
+                {'data': 'Mike', 'children': []},
+                {'data': 'Zelda', 'children': []}]
+            }]
+        }]
+    }, 
+    {'data': 'Cherish', 'children': [
+        {'data': 'Franco', 'children': [
+            {'data': 'Odin', 'children': [
+                {'data': 'Quintin', 'children': []}]
+            }, 
+            {'data': 'Paula', 'children': [
+                {'data': 'Raquel', 'children': [
+                    {'data': 'Yesenia', 'children': []}]}, 
+                {'data': 'Sharad', 'children': []}]
+            }
+        ]}, 
+        {'data': 'Nelson', 'children': [
+            {'data': 'Terrance', 'children': [
+                {'data': 'Ubaldo', 'children': []}
+                ]
+            }, 
+            {'data': 'Vivian', 'children': [
+                {'data': 'Will', 'children': []}]
+            }
+            ]
+        }]
+    }
+    ]}
+    assert worksheet.inorder_traversal(root2) == ['Ivan', 'Han', 'Gretchen', 'Xavi', 'Juliana', 'Dan', 'Bob', 'Kennith', 'Eunice', 'Mike', 'Lauren', 'Zelda', 'Alice', 'Quintin', 'Odin', 'Franco', 'Yesenia', 'Raquel', 'Paula', 'Sharad', 'Cherish', 'Ubaldo', 'Terrance', 'Nelson', 'Will', 'Vivian']

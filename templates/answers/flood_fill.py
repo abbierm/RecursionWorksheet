@@ -98,7 +98,7 @@ def flood_fill(
         width: int = None, 
     ):
 
-    # Programatically determines the height, width, and old_char
+    # Programmatically determines the height, width, and old_char
     # if it wasn't included in the function arguments
     if height is None:
         height, width = len(image), len(image[0])

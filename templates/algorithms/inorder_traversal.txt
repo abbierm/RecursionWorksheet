@@ -1,0 +1,5 @@
+Inorder Traverse a Binary Tree
+
+def inorder_traversal(node: dict) -> list:
+    
+    return []

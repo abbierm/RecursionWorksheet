@@ -15,5 +15,4 @@ Instructions:
 
 def preorder_traversal(node: dict) -> list:
 
-    
-    return None
+    return []

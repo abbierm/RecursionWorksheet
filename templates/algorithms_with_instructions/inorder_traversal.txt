@@ -1,0 +1,21 @@
+Inorder Traverse a Binary Tree
+
+"""
+Instructions: 
+    Given the root node, use an inorder traversal strategy to return a list
+    of all the names inside a python dictionary binary tree. The binary tree 
+    will be in the following format:
+        root = {'data': 'A', 'children': [{'data': 'B', 'children':
+        [{'data': 'D', 'children': []}]}, {'data': 'C', 'children':
+        [{'data': 'E', 'children': [{'data': 'G', 'children': []},
+        {'data': 'H', 'children': []}]}, {'data': 'F', 'children': []}]}]}
+
+    If root was passed to inorder_traversal, the expected result would be:
+        ['D', 'B', 'A', 'G', 'E', 'H', 'C', 'F']
+
+"""
+
+def inorder_traversal(node: dict) -> list:
+    
+    
+    return []
