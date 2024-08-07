@@ -4,22 +4,25 @@ def test_inorder_traversal():
                 {'data': 'D', 'children':[
                     {'data': 'H', 'children':[]},
                     {'data': 'I', 'children': [
-                        {'data': 'M', 'children': []}
-                    ]}
-                ]}, 
+                        {'data': 'M', 'children': []}]
+                    }]
+                },
                 {'data': 'E', 'children': [
                     {'data': 'J', 'children': []}
-                ]},
+                                        ]
+                }]
+            },
             {'data': 'C', 'children': [
                 {'data': 'F', 'children': [
                     {'data': 'K', 'children': []},
                     {'data': 'L', 'children': []}
                 ]},
                 {'data': 'G','children': []}
-            ]}]}]}
+            ]}
+        ]
+    }
 
-    assert worksheet.inorder_traversal(root) == ['H', 'D', 'M', 'I', 'B', 'J', 'E', 'A']
-
+    assert worksheet.inorder_traversal(root) == ['H', 'D', 'M', 'I', 'B', 'J', 'E', 'A', 'K', 'F', 'L', 'C', 'G']
 
 def test_inorder_traversal2():
     root2 = {'data': 'Alice', 'children':[
