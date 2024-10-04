@@ -28,7 +28,7 @@ def _write_tests(test_path, tests):
     with open(test_path, "w") as fout:
         fout.write('import pytest\n')
         fout.write('import worksheet\n')
-        fout.write('from collections import Counter\n\n\n')
+        fout.write('from collections import Counter\n\n\n') 
 
     while len(tests) > 0:
         current_test = tests.pop()
