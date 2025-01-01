@@ -110,4 +110,4 @@ The terminal will print the pytest results
 
 #### Create a worksheet with 12 different algorithms without the docstring instructions.
 
-                python main.py -make -n 12 --no-i
+       python main.py -make -n 12 --no-i
