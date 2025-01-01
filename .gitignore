@@ -3,5 +3,6 @@ __pycache__/
 .env
 .venv
 .virtualenv
+worksheet_venv/
 .vscode/
 worksheets/
