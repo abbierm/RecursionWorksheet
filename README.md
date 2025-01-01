@@ -4,24 +4,24 @@
 
 ## Description
 
- Creates python worksheets with random recursive functions from the book "The Recursive Book of Recursion" by Al Sweigart along with a pytest test file to check answers.  
+ Creates a python file with empty recursive functions (with instructions) and tests them with Pytest.
 
  Inside of the RecursionWorksheet folder in the terminal you can run the command
 
         python main.py make -n 3
 
-This will create a worksheet in the worksheets\mm-dd\worksheet.py with three random recursive algorithms for the user to fill out.
+This will create a file inside the directory worksheets\mm-dd called "worksheet.py" with three random recursive algorithms for the user to fill out.
 
- ![Alt text](static/example_blank_worksheet.jpg)
+ ![blank example worksheet](static/example_blank_worksheet.jpg)
 
 
-Once you are done finishing writing the algorithms, you can test them by running the command:
+Once you are done writing the algorithms, you can test your answers by running the command:
 
         python main.py test
  
 The terminal will print the pytest results
 
-![Alt text](static/example_test_results.jpg)
+![example command line results](static/example_test_results.jpg)
 
  ## Requirements
 
@@ -49,34 +49,32 @@ The terminal will print the pytest results
 - The worksheet.py file will have the the functions defined with a short description detailing what algorithm the function should complete. 
 
      
-
-
 - Once you are done writing out the answers you can test your worksheet by running the following command  
 
         python main.py test
 
 
-
 ## Details
 
-#### There program has four different commands.  If you try to run the main.py script without one of these four commands then the program will return with an error message.
+#### The program has four different basic commands. If you run the main.py script without one of these four command line arguments then the program will return with an error message.
 
-1. make - Creates a new worksheet.py file inside of the worksheet/MM-DD directory along with a test_worksheet.py file used to test. 
+1. "make" - Creates a new worksheet.py file inside of the worksheet/MM-DD directory along with a test_worksheet.py file used to test. 
 
-2. test - Runs pytest and prints results to the terminal. 
+2. "test" - Runs pytest and prints results to the terminal. 
 
-3. clean - Removes all of the tests inside of the worksheets/ directory
+3. "clean" - Removes all of the tests inside of the worksheets/ directory
 
-4. remove - Removes one worksheet
+4. "remove" - Removes one worksheet
 
 
-#### There are two optional command line arguments.  If you don't include these the program will assume the default values. 
+#### There are three optional command line arguments. If you don't include these the program will assume the default values. 
 
-1. -n - Specify the number of worksheets to create.  The default is set at 5. "make" is the only command that uses the -n command.
+1. "-n" : Specify the number of worksheets to create.  The default is set at 5. "make" is the only command that uses the -n command.
 
-2. -d - Specify the date (or what you want to name the folder). The default is set at the current date.
+2. "-d" : Specify the date (or what you want to name the folder). The default is set at the current date.
 
-  
+3. "--no-i" : Tells the program to generate a worksheet without the docstring instructions. Without including this argument the worksheet will have instructions.
+
 
 ## Examples commands :
 
@@ -108,3 +106,8 @@ The terminal will print the pytest results
 #### Permanently delete all of the files and worksheets in the worksheets folder
 
         python main.py clean
+
+
+#### Create a worksheet with 12 different algorithms without the docstring instructions.
+
+                python main.py -make -n 12 --no-i

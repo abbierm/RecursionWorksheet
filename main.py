@@ -186,10 +186,10 @@ def _parse_args() -> dict:
     parser.add_argument('-number', '-n', type=int, default=5, help=number_help)
 
     no_instructions_help = "If you don't want the commented/doc-string \
-        instructions on your worksheet,  use the --no-i modifier to create the \
+        instructions on your worksheet, use the --no-i modifier to create the \
         worksheets with just the functions. \nGenerally this option is for \
         people who already know what the function is asking for and don't want \
-            to add the visual clutter that the instructions add."
+            the extra visual clutter."
     parser.add_argument(
             '--no-i',
             '-no-i',
