@@ -4,18 +4,18 @@
 
 ## Description
 
- Creates a python file with empty recursive functions (with instructions) and tests them with Pytest.
+ Creates a python file with empty recursive functions (with instructions) and tests them via pytest.
 
- Inside of the RecursionWorksheet folder in the terminal you can run the command
+ Inside of the RecursionWorksheet folder in the terminal you can run the command:
 
         python main.py make -n 3
 
-This will create a file inside the directory worksheets\mm-dd called "worksheet.py" with three random recursive algorithms for the user to fill out.
+This will create files "worksheet.py" and "test_worksheet.py" inside of the "worksheets\MM-DD\" directory. The worksheet will have 3 empty functions with instructions on what they are expected to do. 
 
  ![blank example worksheet](static/example_blank_worksheet.jpg)
 
 
-Once you are done writing the algorithms, you can test your answers by running the command:
+Once the user is done writing the algorithms, they can test their answers by running the following command:
 
         python main.py test
  
