@@ -2,6 +2,7 @@
 # Algorithms to practice along with tests via pytest
 
 import argparse
+from dataclasses import dataclass
 from datetime import datetime
 import os
 from pathlib import Path
@@ -10,17 +11,30 @@ import random
 import shutil
 
 
+
+
 TEMPLATES_PATH = Path((os.path.dirname(__file__)), "templates", "algorithms")
+TEMPLATES_WITH_INSTRUCTIONS = Path((os.path.dirname(__file__)), \
+                                    "templates", "algorithms_with_instructions")
 POSSIBLE_ALGORITHMS_PER_PAGE = len(os.listdir(TEMPLATES_PATH))
 WORKSHEETS_PATH = Path((os.path.dirname(__file__)), "worksheets")
 
 
-def _pick_random_algorithms(number: int):
+@dataclass
+class Arguments():
+    command: str
+    date: str
+    number: int
+    no_instructions: bool
+    function: str
+
+
+def _pick_random_algorithms(number: int) -> list:
     algorithms = os.listdir(TEMPLATES_PATH)
     random_set = set()
     while len(random_set) < number:
         random_set.add(random.choice(algorithms))
-    return random_set
+    return list(random_set)
 
 
 def _write_tests(test_path, tests):
@@ -45,16 +59,22 @@ def _write_tests(test_path, tests):
             fout.write('\n\n\n')
 
 
-def _write_worksheet(worksheet_path, algorithms, no_instructions):
+def _write_worksheet(
+    worksheet_path: Path, 
+    algorithms: list[str], 
+    no_instructions: bool
+):
+
     # Write Heading of worksheet and clear worksheet if it already exists. 
     with open(worksheet_path, 'w') as fout:
         fout.write(f'# Recursion Worksheet: {datetime.now().strftime("%m-%d")}\n\n')
     
-    while len(algorithms) > 0:
-        current_algorithm = algorithms.pop()
+    for i in range(len(algorithms)):
+    # while len(algorithms) > 0:
+        current_algorithm = algorithms[i]
 
         # Read and store algo from template
-        if no_instructions == False:
+        if no_instructions is False:
             template_path = Path((os.path.dirname(__file__)), 
                         "templates", 
                         "algorithms_with_instructions", 
@@ -79,46 +99,44 @@ def _write_worksheet(worksheet_path, algorithms, no_instructions):
     return None
 
 
-def make_new_worksheet(date, number, no_instructions):
+def make_new_worksheet(args):
     # Creates a path to a directory with today's date 
-    if date is None:
-        date = datetime.now().strftime('%m-%d')
-    path = Path((os.path.dirname(__file__)), "worksheets", date)
+    if args.date is None:
+        args.date = datetime.now().strftime('%m-%d')
+    path = Path((os.path.dirname(__file__)), "worksheets", args.date)
     if path.exists() is False:
         os.makedirs(path)
 
     # Picks Random algorithms based on argument number
-    algos_set = _pick_random_algorithms(number)
-    test_algos = list(algos_set)
-
+    algos = _pick_random_algorithms(args.number)
+    
     # Paths to the new worksheet and test files
     worksheet_path = Path(path, "worksheet.py")
     test_path = Path(path, "test_worksheet.py")
 
     # Write the worksheet and pytest file in same directory
-    _write_worksheet(worksheet_path, algos_set, no_instructions)
-    _write_tests(test_path, test_algos)
-
+    _write_worksheet(worksheet_path, algos, args.no_instructions)
+    _write_tests(test_path, algos)
     return 
 
 
-def remove_worksheet(date, number, no_instructions) -> None:
-    folder_to_remove = Path(WORKSHEETS_PATH, date)
-
+def remove_worksheet(args) -> None:
+    """Removes a specific worksheet."""
+    folder_to_remove = Path(WORKSHEETS_PATH, args.date)
     if os.path.isdir(folder_to_remove):
         while True:
-            user_input = input(f'Are you sure you want to remove the directory{date}? y/n  ')
+            user_input = input(f'Are you sure you want to remove the directory{args.date}? y/n: ')
             if user_input.lower() == 'y' or user_input.lower() == 'yes':
                 print(f'.....Removing {folder_to_remove}...\n')
                 shutil.rmtree(folder_to_remove)
-                print(f'Successfully removed the {date} folder')
+                print(f'Successfully removed the {args.date} folder')
                 break
             elif user_input.lower() == 'n' or user_input.lower == 'no':
                 print('Process aborted........ exiting program. ')
     return
 
 
-def clean(*args) -> None:
+def clean(args) -> None:
     """ Removes all files from the worksheet folder. """
 
     worksheet_folders = os.listdir(WORKSHEETS_PATH)
@@ -140,10 +158,32 @@ def clean(*args) -> None:
     return None
 
 
-def run_tests(date, number, no_instructions):
+def testf(args) -> None:
+    """
+    Creates a worksheet with one specific function specified in the command line arguments.
+    """
+    if not args.date:
+        args.date = datetime.now().strftime('%m-%d')
+    worksheet_path = Path(WORKSHEETS_PATH, args.date, "worksheet.py")
+    test_path = Path(WORKSHEETS_PATH, args.date, "test_worksheet.py")
+
+
+    func = "{}.txt".format(args.function)
+    if func not in os.listdir(TEMPLATES_PATH):
+        print(f"Unable to find function: {args.function}")
+        return
+    
+    algos = [func]
+    _write_worksheet(worksheet_path, algos, args.no_instructions)
+    _write_tests(test_path, algos)
+    return
+
+
+
+def run_tests(args):
     """Runs pytest on the file for the specific date"""
 
-    test_path = Path(WORKSHEETS_PATH, date)
+    test_path = Path(WORKSHEETS_PATH, args.date)
     
     if os.path.isdir(test_path):
         # Clears the cache
@@ -159,7 +199,7 @@ def run_tests(date, number, no_instructions):
     return
 
 
-def _parse_args() -> dict:
+def _parse_args():
 
     """ 
     Setup and parse command-line arguments.
@@ -177,7 +217,7 @@ def _parse_args() -> dict:
         worksheets inside of the worksheet folder, 'test' runs the pytest test \
         to check the worksheet."
 
-    parser.add_argument('command', choices=['make', 'remove', 'clean', 'test'], default='make', help=command_help)
+    parser.add_argument('command', choices=['make', 'remove', 'clean', 'test', 'testf'], default='make', help=command_help)
 
     date_help = "Date argument for file removal or testing. Takes the date in 'mm-dd' year argument. "
     parser.add_argument('-date', '-d', help=date_help, default=datetime.now().strftime("%m-%d"))
@@ -200,12 +240,20 @@ def _parse_args() -> dict:
             help=no_instructions_help
         )
 
-    args = parser.parse_args()
-    # reformats dates incase user puts '/' or '\' which would return an error
-    if '/' in args.date or '\\' in args.date:
-        args.date = args.date.replace('/', '-').replace('\\', '-')
+    function_help = "If you want to create a worksheet with one specific function, you can use the -f or -function argument and specify the name of the function. The function name should be its stem inside the templates/algorithm folder.\nFor example if you wanted to make a worksheet for the multiply() function, you would use the following command:\n'python make -f karatsuba_multiplication'\n"
+    parser.add_argument(
+        '-f',
+        '-function',
+        dest='function',
+        help=function_help,
+        default=None)
+
+    nsp = Arguments(**vars(parser.parse_args()))
+
+    if '/' in nsp.date or '\\' in nsp.date:
+        nsp.date = nsp.date.replace('/', '-').replace('\\', '-')
     
-    return args
+    return nsp
 
 
 def main() -> None:
@@ -213,12 +261,12 @@ def main() -> None:
                             'make': make_new_worksheet,
                             'test': run_tests,
                             'clean': clean,
-                            'remove': remove_worksheet 
+                            'remove': remove_worksheet,
+                            'testf': testf 
                             }
     args = _parse_args()
-    
     command = function_dictionary[args.command]
-    command(args.date, args.number, args.no_instructions)
+    command(args)
 
 
 if __name__ == "__main__":

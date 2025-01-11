@@ -6,3 +6,4 @@ __pycache__/
 worksheet_venv/
 .vscode/
 worksheets/
+.python-version
