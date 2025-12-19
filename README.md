@@ -101,7 +101,7 @@ The terminal will print the pytest results
 
 #### Remove the worksheet from the i_hate_recursion folder
 
-        python main.py remove -d i_love_corgis
+        python main.py remove -d i_hate_recursion
 
 #### Permanently delete all of the files and worksheets in the worksheets folder
 

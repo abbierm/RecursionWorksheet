@@ -1,0 +1,4 @@
+Print all the Permutations from an Array
+
+def print_permutations(arry: list) -> None:
+    return None

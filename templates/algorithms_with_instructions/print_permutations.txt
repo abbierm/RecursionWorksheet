@@ -1,0 +1,20 @@
+Print All Permutations from an Array
+
+"""
+Instructions:
+    Given a list of any type, print every possible permutations of the list.
+    This function should not create any extra lists in memory but instead
+    alter the list in place to get the permutations. Every new permutation
+    should be printed on a new line.
+
+    For example print_permutations(['A', 'B', 'C']) should print:
+        ['A', 'B', 'C']
+        ['B', 'A', 'C']
+        ['C', 'A', 'B']
+        ['A', 'C', 'B']
+        ['B', 'C', 'A']
+        ['C', 'B', 'A']
+"""
+
+def print_permutations(arry: list) -> None:
+    return None
